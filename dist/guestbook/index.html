@@ -1,4 +1,21 @@
-{{template "header" .}}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Leave a message for Teddy." />
+        <title>Guestbook | Forever With Us</title>
+        
+
+        <link rel="stylesheet" href="/assets/style.css" />
+        <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    </head>
+    <body>
+        <header class="site-header">
+
+        </header>
+        <main>
 <h1>Guestbook for Teddy</h1>
 <div>
     <h2>Leave a Message</h2>
@@ -21,14 +38,19 @@
 </div>
 <div>
     <h2>Messages</h2>
-    {{if not .Entries}}
+    
     <p>No messages yet. Be the first to leave one.</p>
-    {{else}} {{range .Entries}}
-    <div>
-        <p>{{.Message}}</p>
-        <p><em>&mdash; {{.Name}}, {{.Timestamp}}</em></p>
-    </div>
-    <hr />
-    {{end}} {{end}}
+    
 </div>
-{{template "footer" .}}
+
+</main>
+<footer class="site-footer">
+
+
+  <div class="container center">&copy; 2026 Kayla and Seth.</div>
+</footer>
+<script src="/assets/nav.js"></script>
+<script src="/assets/car.js"></script>
+</body>
+</html>
+
