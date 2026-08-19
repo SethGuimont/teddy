@@ -1,0 +1,57 @@
+{{template "header" .}}
+
+<h1>Photos of Teddy</h1>
+
+<div>
+    {{if not .Photos}}
+    <p>No photos yet.</p>
+    {{else}}
+    <div id="slideshow">
+        <button type="button" id="prev-btn" aria-label="Previous photo">&larr;</button>
+        <span id="slide-track">
+            {{range $i, $p := .Photos}}
+            <figure class="slide" data-index="{{$i}}" {{if ne $i 0}}style="display:none;"{{end}}>
+                <img src="/assets/images/{{$p.Filename}}" alt="{{if $p.Caption}}{{$p.Caption}}{{else}}Photo of Teddy{{end}}" style="max-width:100%;max-height:70vh;" />
+                {{if $p.Caption}}<figcaption>{{$p.Caption}}</figcaption>{{end}}
+            </figure>
+            {{end}}
+        </span>
+        <button type="button" id="next-btn" aria-label="Next photo">&rarr;</button>
+    </div>
+    <p id="slide-counter"></p>
+    {{end}}
+</div>
+
+<script>
+    (function () {
+        var slides = document.querySelectorAll(".slide");
+        if (!slides.length) return;
+
+        var current = 0;
+        var counter = document.getElementById("slide-counter");
+
+        function show(index) {
+            slides[current].style.display = "none";
+            current = (index + slides.length) % slides.length;
+            slides[current].style.display = "";
+            if (counter) {
+                counter.textContent = (current + 1) + " / " + slides.length;
+            }
+        }
+
+        document.getElementById("prev-btn").addEventListener("click", function () {
+            show(current - 1);
+        });
+        document.getElementById("next-btn").addEventListener("click", function () {
+            show(current + 1);
+        });
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowLeft") show(current - 1);
+            if (e.key === "ArrowRight") show(current + 1);
+        });
+
+        show(0);
+    })();
+</script>
+
+{{template "footer" .}}
