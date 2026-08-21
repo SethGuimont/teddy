@@ -1,6 +1,6 @@
 {{template "header" .}}
 <h1>Guestbook for Teddy</h1>
-<div>
+<div class="guestbook">
     <h2>Leave a Message</h2>
     <p>Submissions are reviewed and added to the page below periodically &mdash; they won't appear instantly.</p>
     <form name="guestbook" netlify method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/">
@@ -19,7 +19,7 @@
         <button type="submit">Sign the Guestbook</button>
     </form>
 </div>
-<div>
+<div class="guestbook">
     <h2>Messages</h2>
     {{if not .Entries}}
     <p>No messages yet. Be the first to leave one.</p>
