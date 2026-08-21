@@ -16,8 +16,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: bottom center;
 	background-size: cover;
-	background-attachment: fixed;
-	min-height: 100vh;
+
 	}
 	header,
 	main,
