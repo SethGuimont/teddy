@@ -16,13 +16,7 @@ body {
 		width: 100%;
 	}
 
-	header h1 {
-		background: transparent url(http://csszengarden.com/001/h1.gif) no-repeat top left;
-		margin-top: 10px;
-		display: block;
-		width: 219px;
-		height: 87px;
-		text-align: center;
+
 	p {
 		margin-top: 0;
 		text-align: center;
