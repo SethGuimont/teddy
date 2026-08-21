@@ -22,9 +22,13 @@ body {
 		margin-top: 0;
 		text-align: center;
 	}
-	.our-story{
+	main{
 	    text-align:center;
 		width:80%;
+	 flex: 1 0 auto;
+    z-index: 1;
+    margin: 2rem auto; /* centers it with top/bottom spacing */
+    padding: 2rem; /* breathing room inside */
 	}
 
 	h1 {
