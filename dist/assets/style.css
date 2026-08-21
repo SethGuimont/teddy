@@ -30,6 +30,7 @@ body {
     z-index: 1;
     margin: 2rem auto; /* centers it with top/bottom spacing */
     padding: 2rem; /* breathing room inside */
+    background:#fff;
 	}
 
 	h1 {
