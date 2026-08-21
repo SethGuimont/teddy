@@ -11,7 +11,6 @@ body {
 	/* Layered background: the forest illustration fills the viewport and
 	   stays put while the page scrolls (background-attachment: fixed) --
 	   header/main/footer float on top of it in their own panels below. */
-	background-color: #dcebd6;
 	background-image: url(/assets/images/background.JPEG);
 	background-repeat: no-repeat;
 	background-position: bottom center;
