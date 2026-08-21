@@ -6,110 +6,140 @@ body {
 	font: 75% georgia, sans-serif;
 	line-height: 1.88889;
 	color: #555753;
-	background:#c0cac3;
 	margin: 0;
 	padding: 0;
+	/* Layered background: the forest illustration fills the viewport and
+	   stays put while the page scrolls (background-attachment: fixed) --
+	   header/main/footer float on top of it in their own panels below. */
+	background-color: #dcebd6;
+	background-image: url(/assets/images/background.JPEG);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: cover;
+	background-attachment: fixed;
+	min-height: 100vh;
 	}
-
+	header,
+	main,
+	footer {
+		/* Translucent panels so body text stays readable over the busy
+		   forest background instead of floating directly on top of it. */
+		max-width: 700px;
+		margin: 0 auto 1.5em;
+		background: rgba(255, 255, 250, 0.88);
+		border-radius: 10px;
+		box-shadow: 0 2px 16px rgba(30, 50, 20, 0.15);
+	}
 	header {
 	    min-width: 470px;
 		width: 100%;
-		text-align:center;
+		box-sizing: border-box;
+		padding: 0.75em 1em;
 	}
-
-
-
+	main {
+		box-sizing: border-box;
+		padding: 1.5em 2em;
+	}
+	footer {
+		box-sizing: border-box;
+		padding: 0.75em 1em;
+		margin-bottom: 2em;
+	}
 	p {
 		margin-top: 0;
 		text-align: center;
 	}
-	main{
+	.our-story{
 	    text-align:center;
 		width:80%;
-	 flex: 1 0 auto;
-    z-index: 1;
-    margin: 2rem auto; /* centers it with top/bottom spacing */
-    padding: 2rem; /* breathing room inside */
-    background:#fff;
 	}
-
 	h1 {
 	    text-align:center;
 	}
-
+	footer {
+		text-align: center;
+	}
 	.guestbook {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
+		max-width: 500px;
+		margin: 0 auto;
+		text-align: center;
 	}
 	.guestbook form {
-    display: inline-block;
-    text-align: left;
-    width: 100%;
+		display: inline-block;
+		text-align: left;
+		width: 100%;
 	}
 	.guestbook input[type="text"],
 	.guestbook textarea {
-    width: 100%;
-    box-sizing: border-box;
+		width: 100%;
+		box-sizing: border-box;
 	}
-
 	/* Paw-print prev/next buttons on the gallery slideshow */
-		#prev-btn,
-		#next-btn {
-			position: relative;
-			width: 48px;
-			height: 48px;
-			border: none;
-			background: transparent;
-			cursor: pointer;
-			font-size: 0; /* hide the arrow glyph -- the paw shape replaces it visually */
-			color: transparent;
-			vertical-align: middle;
-		}
-		#prev-btn:hover,
-		#next-btn:hover {
-			transform: scale(1.08);
-		}
-		#prev-btn:active,
-		#next-btn:active {
-			transform: scale(0.95);
-		}
-		/* Main pad -- the big oval at the bottom of the paw */
-		#prev-btn::before,
-		#next-btn::before {
-			content: "";
-			position: absolute;
-			left: 50%;
-			bottom: 4px;
-			width: 22px;
-			height: 18px;
-			background: #8b5a2b;
-			border-radius: 50% 50% 45% 45% / 65% 65% 45% 45%;
-			transform: translateX(-50%);
-		}
-		/* Four toes, arranged in an arc above the pad using box-shadow copies:
-		   the element itself is the outer-left toe, and each box-shadow entry
-		   adds one more toe (inner-left, inner-right, outer-right). The two
-		   inner toes sit 3px higher to give the arc its curve. Nudge the
-		   left/top/box-shadow offsets here if the spacing looks off. */
-		#prev-btn::after,
-		#next-btn::after {
-			content: "";
-			position: absolute;
-			top: 6px;
-			left: 50%;
-			width: 7px;
-			height: 9px;
-			margin-left: -21px;
-			background: #8b5a2b;
-			border-radius: 50%;
-			box-shadow:
-				14px -3px 0 0 #8b5a2b,
-				28px -3px 0 0 #8b5a2b,
-				42px 0 0 0 #8b5a2b;
-		}
-
-
-	footer {
+	#prev-btn,
+	#next-btn {
+		position: relative;
+		width: 48px;
+		height: 48px;
+		border: none;
+		background: transparent;
+		cursor: pointer;
+		font-size: 0; /* hide the arrow glyph -- the paw shape replaces it visually */
+		color: transparent;
+		vertical-align: middle;
+	}
+	#prev-btn:hover,
+	#next-btn:hover {
+		transform: scale(1.08);
+	}
+	#prev-btn:active,
+	#next-btn:active {
+		transform: scale(0.95);
+	}
+	/* Main pad -- the big oval at the bottom of the paw */
+	#prev-btn::before,
+	#next-btn::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		bottom: 4px;
+		width: 22px;
+		height: 18px;
+		background: #8b5a2b;
+		border-radius: 50% 50% 45% 45% / 65% 65% 45% 45%;
+		transform: translateX(-50%);
+	}
+	/* Four toes, arranged in an arc above the pad using box-shadow copies:
+	   the element itself is the outer-left toe, and each box-shadow entry
+	   adds one more toe (inner-left, inner-right, outer-right). The two
+	   inner toes sit 3px higher to give the arc its curve. Nudge the
+	   left/top/box-shadow offsets here if the spacing looks off. */
+	#prev-btn::after,
+	#next-btn::after {
+		content: "";
+		position: absolute;
+		top: 6px;
+		left: 50%;
+		width: 7px;
+		height: 9px;
+		margin-left: -21px;
+		background: #8b5a2b;
+		border-radius: 50%;
+		box-shadow:
+			14px -3px 0 0 #8b5a2b,
+			28px -3px 0 0 #8b5a2b,
+			42px 0 0 0 #8b5a2b;
+	}
+	/* Lay the slideshow's prev button / photo / next button out
+	   side-by-side instead of stacking (the <figure> is block-level
+	   by default, which forced a line break without this). */
+	#slideshow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+	}
+	#slide-track {
+		flex: 1;
 		text-align: center;
+		min-width: 0; /* allow the image to shrink instead of overflowing the panel */
 	}
