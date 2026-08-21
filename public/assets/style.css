@@ -53,6 +53,63 @@ body {
     box-sizing: border-box;
 	}
 
+	/* Paw-print prev/next buttons on the gallery slideshow */
+		#prev-btn,
+		#next-btn {
+			position: relative;
+			width: 48px;
+			height: 48px;
+			border: none;
+			background: transparent;
+			cursor: pointer;
+			font-size: 0; /* hide the arrow glyph -- the paw shape replaces it visually */
+			color: transparent;
+			vertical-align: middle;
+		}
+		#prev-btn:hover,
+		#next-btn:hover {
+			transform: scale(1.08);
+		}
+		#prev-btn:active,
+		#next-btn:active {
+			transform: scale(0.95);
+		}
+		/* Main pad -- the big oval at the bottom of the paw */
+		#prev-btn::before,
+		#next-btn::before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			bottom: 4px;
+			width: 22px;
+			height: 18px;
+			background: #8b5a2b;
+			border-radius: 50% 50% 45% 45% / 65% 65% 45% 45%;
+			transform: translateX(-50%);
+		}
+		/* Four toes, arranged in an arc above the pad using box-shadow copies:
+		   the element itself is the outer-left toe, and each box-shadow entry
+		   adds one more toe (inner-left, inner-right, outer-right). The two
+		   inner toes sit 3px higher to give the arc its curve. Nudge the
+		   left/top/box-shadow offsets here if the spacing looks off. */
+		#prev-btn::after,
+		#next-btn::after {
+			content: "";
+			position: absolute;
+			top: 6px;
+			left: 50%;
+			width: 7px;
+			height: 9px;
+			margin-left: -21px;
+			background: #8b5a2b;
+			border-radius: 50%;
+			box-shadow:
+				14px -3px 0 0 #8b5a2b,
+				28px -3px 0 0 #8b5a2b,
+				42px 0 0 0 #8b5a2b;
+		}
+
+
 	footer {
 		text-align: center;
 	}
